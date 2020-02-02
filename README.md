@@ -4,7 +4,6 @@
 ![Website Homepage]()
 
 ## Features
-List of features ready and TODOs for future development
 * Various Display of Ability
 * Showcase of Past, Present & Future Work
 * Personal Information & Services
