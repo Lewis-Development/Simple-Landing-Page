@@ -1,0 +1,52 @@
+header {
+    background-attachment: fixed;
+    /* Image downloaded from 'https://wallpapercave.com/wallpaper-gif' and posted by 'caveman' */
+    background-image: url(../img/main.gif);
+    background-size: cover;
+    border-bottom: 2px solid #F13635;
+    min-height: 100%; 
+    position: relative;
+}
+
+header .container {
+    color: #FFF;
+    cursor: default;
+    font-size: 32px;
+    left: 50%;
+    line-height: 36px;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+header .container a {
+    border: 2px solid #FFF;
+    color: #FFF;
+    display: inline-block;
+    font-size: 15px;
+    margin: 30px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.5s;
+} header .container a:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+    background-color: #f13635;
+    border-color: #F13635;
+}
+
+header .contact {
+    cursor: default;
+    font-size: 14px;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    bottom: 1%;
+    transform: translate(-50%, -50%);
+}
+
+header .contact a {
+    color: #F13635;
+    text-decoration: none;
+} header .contact a:hover { text-decoration: underline; }
