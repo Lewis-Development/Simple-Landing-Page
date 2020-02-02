@@ -4,7 +4,7 @@ header {
     background-image: url(../img/main.gif);
     background-position: center;
     background-size: cover;
-    border-bottom: 5px solid #22222C;
+    box-shadow: 0 15px 10px -15px #111;  
     min-height: 100%; 
     position: relative;
 }
