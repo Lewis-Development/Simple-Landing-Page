@@ -1,10 +1,14 @@
-$mobile-width: 800px;
+$display-breakpoint: (
+    "small": 500px,
+    "medium": 800px,
+    "large": 1150px
+);
 
 $font-color: (
     "default": #777,
     "offset": #F13635,
     "emphasis": #FFF,
-    "strong": #000
+    "strong": #666
 );
 
 $font-weight: (

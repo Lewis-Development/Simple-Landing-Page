@@ -1,3 +1,7 @@
+@function breakpoint($point-name) {
+    @return map-get($display-breakpoint, $point-name)
+};
+
 @function color($color-name) {
     @return map-get($font-color, $color-name)
 };
