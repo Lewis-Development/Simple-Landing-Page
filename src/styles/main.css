@@ -22,7 +22,7 @@
 html, body {
   color: #777;
   cursor: default;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'default', sans-serif;
   height: 100%;
   margin: 0;
   overflow-x: hidden;
