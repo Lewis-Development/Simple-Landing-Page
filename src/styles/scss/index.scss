@@ -1,0 +1,59 @@
+$display-breakpoint: (
+    "small": 500px,
+    "medium": 800px,
+    "large": 1150px
+);
+
+$font-color: (
+    "default": #777,
+    "offset": #F13635,
+    "emphasis": #FFF,
+    "strong": #666
+);
+
+$font-weight: (
+    "light": lighter,
+    "default": normal,
+    "bold": bold
+);
+
+@function breakpoint($point-name) { @return map-get($display-breakpoint, $point-name) };
+@function color($color-name) { @return map-get($font-color, $color-name) };
+@function weight($weight-name) { @return map-get($font-weight, $weight-name) };
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #222234; }
+::-webkit-scrollbar-thumb { background: #161624; }
+::-webkit-scrollbar-thumb:hover { background: #22222C; }
+
+* { box-sizing: border-box; }
+
+html, body {
+    color: color(default);
+    cursor: default;
+    font-family: 'default', sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+.highlight { 
+    color: color(offset);
+    font-weight: weight(bold);
+}
+
+@import 'index/header';
+@import 'index/main';
+@import 'index/footer';
+
+@mixin min {
+    @media (min-width: 0) and (max-width: breakpoint(small)) { @content; }
+}
+@mixin mobile {
+    @media (min-width: breakpoint(small)) and (max-width: breakpoint(medium)) { @content; }
+}
+@mixin showcase {
+    @media (min-width: breakpoint(medium)) and (max-width: breakpoint(large)) { @content; }
+}
