@@ -13,4 +13,4 @@
 This project is currently: _in progress_ and has no planned completion date.
 
 ## Contact
-Created by [Lewis-Mackinnon](https://lewismackinnon.co.uk) - feel free to contact me!
+Created by [Lewis-Mackinnon](mailto:contact@lewismackinnon.co.uk) - feel free to contact me!
