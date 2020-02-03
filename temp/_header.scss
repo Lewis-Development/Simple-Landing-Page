@@ -19,6 +19,24 @@ header {
         top: 40%;
         transform: translate(-50%, -50%);
 
+        a {
+            border: 2px solid #FFF;
+            color: #FFF;
+            display: inline-block;
+            font-size: 15px;
+            margin: 30px;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.5s;
+
+            &:hover {
+                animation: shake 0.5s;
+                animation-iteration-count: infinite;
+                background-color: #f13635;
+                border-color: #F13635;
+            }
+        } 
+
         @include mobile {
             .cut { display: none; } 
             .upper { text-transform: uppercase; }
