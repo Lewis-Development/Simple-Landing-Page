@@ -1,3 +1,54 @@
+$display-breakpoint: (
+    "small": 500px,
+    "medium": 800px,
+    "large": 1150px
+);
+
+$font-color: (
+    "default": #777,
+    "offset": #F13635,
+    "emphasis": #FFF,
+    "strong": #666
+);
+
+$font-weight: (
+    "light": lighter,
+    "default": normal,
+    "bold": bold
+);
+
+@function breakpoint($point-name) { @return map-get($display-breakpoint, $point-name) };
+@function color($color-name) { @return map-get($font-color, $color-name) };
+@function weight($weight-name) { @return map-get($font-weight, $weight-name) };
+
+@mixin breakpoint-small {
+    @media (min-width: 0) and (max-width: breakpoint(small)) { @content; }
+}
+@mixin breakpoint-medium {
+    @media (min-width: breakpoint(small)) and (max-width: breakpoint(medium)) { @content; }
+}
+@mixin breakpoint-large {
+    @media (min-width: breakpoint(medium)) and (max-width: breakpoint(large)) { @content; }
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #222234; }
+::-webkit-scrollbar-thumb { background: #161624; }
+::-webkit-scrollbar-thumb:hover { background: #22222C; }
+
+* { box-sizing: border-box; }
+
+html, body {
+    color: color(default);
+    cursor: default;
+    font-family: 'default', sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
 header {
     background-attachment: fixed;
     background-color: #222234;
@@ -18,6 +69,11 @@ header {
         position: absolute;
         top: 40%;
         transform: translate(-50%, -50%);
+
+        .highlight { 
+            color: color(offset);
+            font-weight: weight(bold);
+        }
 
         a {
             border: 2px solid #FFF;
@@ -51,7 +107,7 @@ header {
             }
         } 
 
-        @include mobile {
+        @include breakpoint-medium {
             .cut { display: none; } 
             .upper { text-transform: uppercase; }
         }
@@ -90,4 +146,43 @@ header {
             }
         }
     }
+}
+
+main { 
+    position: relative;
+
+    .container {
+        color: color(strong);
+        margin: 50px auto;
+        max-width: 75%;
+        text-align: center;
+
+        h1 { font-weight: weight(bold); }
+
+        .showcase {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 25% 25% 25% 25%;
+
+            .project {
+                background-color: black;
+                border-radius: 5px;
+                height: 200px;
+                width: 100%;
+            }
+
+            @include breakpoint-small { grid-template-columns: 100%; }
+            @include breakpoint-medium { grid-template-columns: 50% 50%; }
+            @include breakpoint-large { grid-template-columns: 33% 33% 33%; }
+        }
+    }
+}
+
+footer {
+    bottom: 0;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
 }
