@@ -5,10 +5,10 @@ $display-breakpoint: (
 );
 
 $font-color: (
-    "default": #777,
+    "default": #555,
     "offset": #F13635,
     "emphasis": #FFF,
-    "strong": #666
+    "strong": #777
 );
 
 $font-weight: (
@@ -31,6 +31,8 @@ $font-weight: (
     @media (min-width: breakpoint(medium)) and (max-width: breakpoint(large)) { @content; }
 }
 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #222234; }
 ::-webkit-scrollbar-thumb { background: #161624; }
@@ -41,7 +43,7 @@ $font-weight: (
 html, body {
     color: color(default);
     cursor: default;
-    font-family: 'default', sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     margin: 0;
     overflow-x: hidden;
@@ -51,7 +53,6 @@ html, body {
 
 header {
     background-attachment: fixed;
-    background-color: #222234;
     /* Image downloaded from 'https://wallpapercave.com/wallpaper-gif' and posted by 'caveman' */
     background-image: url(../img/main.gif);
     background-position: center;
@@ -88,8 +89,8 @@ header {
             &:hover {
                 animation: shake 0.5s;
                 animation-iteration-count: infinite;
-                background-color: #f13635;
-                border-color: #F13635;
+                background-color: color(offset);
+                border-color: color(offset);
             }
 
             @keyframes shake {
@@ -114,6 +115,7 @@ header {
     }
 
     .contact {
+        color: color(strong);
         font-size: 14px;
         left: 50%;
         text-align: center;
@@ -152,12 +154,40 @@ main {
     position: relative;
 
     .container {
-        color: color(strong);
         margin: 50px auto;
         max-width: 75%;
         text-align: center;
 
-        h1 { font-weight: weight(bold); }
+        h1 { font-weight: weight(bold); };
+        h2 { 
+            font-size: 16px; 
+            margin-top: -20px;
+            text-decoration: overline;
+        }
+
+        .filter {
+            margin: 10px auto 20px auto;
+            text-align: center;
+            width: 40%;
+
+            button {
+                background-color: #F5F5F5;
+                border: 1px solid #DCDCDC;
+                border-radius: 4px;
+                color: color(default);
+                line-height: 10px;
+                margin: 2px;
+                padding: 10px;
+                text-decoration: none;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: color(default);
+                    color: color(emphasis);
+                    cursor: pointer;
+                }
+            }
+        }
 
         .showcase {
             display: grid;
