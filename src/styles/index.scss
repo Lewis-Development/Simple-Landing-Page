@@ -1,34 +1,14 @@
-$display-breakpoint: (
-    "small": 500px,
-    "medium": 800px,
-    "large": 1150px
-);
-
 $font-color: (
     "default": #555,
     "offset": #F13635,
-    "emphasis": #FFF,
-    "strong": #777
-);
-
-$font-weight: (
-    "light": lighter,
-    "default": normal,
-    "bold": bold
+    "bright": #FFF,
 );
 
 @function breakpoint($point-name) { @return map-get($display-breakpoint, $point-name) };
 @function color($color-name) { @return map-get($font-color, $color-name) };
-@function weight($weight-name) { @return map-get($font-weight, $weight-name) };
 
-@mixin breakpoint-small {
-    @media (min-width: 0) and (max-width: breakpoint(small)) { @content; }
-}
-@mixin breakpoint-medium {
-    @media (min-width: breakpoint(small)) and (max-width: breakpoint(medium)) { @content; }
-}
-@mixin breakpoint-large {
-    @media (min-width: breakpoint(medium)) and (max-width: breakpoint(large)) { @content; }
+@mixin breakpoint-mobile {
+    @media (min-width: 0) and (max-width: 800px) { @content; }
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
@@ -57,12 +37,11 @@ header {
     background-image: url(../img/main.gif);
     background-position: center;
     background-size: cover;
-    box-shadow: 0 1em 1em -1em rgba(0, 0, 0, .25);
     min-height: 100%; 
     position: relative;
 
     .container {
-        color: color(emphasis);
+        color: color(bright);
         font-size: 32px;
         left: 50%;
         line-height: 36px;
@@ -73,12 +52,12 @@ header {
 
         .highlight { 
             color: color(offset);
-            font-weight: weight(bold);
+            font-weight: bold;
         }
 
         a {
             border: 2px solid #FFF;
-            color: #FFF;
+            color: color(bright);
             display: inline-block;
             font-size: 15px;
             margin: 30px;
@@ -108,14 +87,13 @@ header {
             }
         } 
 
-        @include breakpoint-medium {
+        @include breakpoint-mobile {
             .cut { display: none; } 
             .upper { text-transform: uppercase; }
         }
     }
 
     .contact {
-        color: color(strong);
         font-size: 14px;
         left: 50%;
         text-align: center;
@@ -148,71 +126,4 @@ header {
             }
         }
     }
-}
-
-main { 
-    position: relative;
-
-    .container {
-        margin: 50px auto;
-        max-width: 75%;
-        text-align: center;
-
-        h1 { font-weight: weight(bold); };
-        h2 { 
-            font-size: 16px; 
-            margin-top: -20px;
-            text-decoration: overline;
-        }
-
-        .filter {
-            margin: 10px auto 20px auto;
-            text-align: center;
-            width: 40%;
-
-            button {
-                background-color: #F5F5F5;
-                border: 1px solid #DCDCDC;
-                border-radius: 4px;
-                color: color(default);
-                line-height: 10px;
-                margin: 2px;
-                padding: 10px;
-                text-decoration: none;
-                transition: all .3s;
-
-                &:hover {
-                    background-color: color(default);
-                    color: color(emphasis);
-                    cursor: pointer;
-                }
-            }
-        }
-
-        .showcase {
-            display: grid;
-            grid-gap: 5px;
-            grid-template-columns: 25% 25% 25% 25%;
-
-            .project {
-                background-color: black;
-                border-radius: 5px;
-                height: 200px;
-                width: 100%;
-            }
-
-            @include breakpoint-small { grid-template-columns: 100%; }
-            @include breakpoint-medium { grid-template-columns: 50% 50%; }
-            @include breakpoint-large { grid-template-columns: 33% 33% 33%; }
-        }
-    }
-}
-
-footer {
-    bottom: 0;
-    font-size: 12px;
-    line-height: 17px;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
 }

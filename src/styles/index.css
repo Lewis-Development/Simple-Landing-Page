@@ -40,8 +40,6 @@ header {
   background-image: url(../img/main.gif);
   background-position: center;
   background-size: cover;
-  -webkit-box-shadow: 0 1em 1em -1em rgba(0, 0, 0, 0.25);
-          box-shadow: 0 1em 1em -1em rgba(0, 0, 0, 0.25);
   min-height: 100%;
   position: relative;
 }
@@ -178,7 +176,7 @@ header .container a:hover {
   }
 }
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 0) and (max-width: 800px) {
   header .container .cut {
     display: none;
   }
@@ -188,7 +186,6 @@ header .container a:hover {
 }
 
 header .contact {
-  color: #777;
   font-size: 14px;
   left: 50%;
   text-align: center;
@@ -226,95 +223,5 @@ header .contact a:hover:after {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-}
-
-main {
-  position: relative;
-}
-
-main .container {
-  margin: 50px auto;
-  max-width: 75%;
-  text-align: center;
-}
-
-main .container h1 {
-  font-weight: bold;
-}
-
-main .container h2 {
-  font-size: 16px;
-  margin-top: -20px;
-  text-decoration: overline;
-}
-
-main .container .filter {
-  margin: 10px auto 20px auto;
-  text-align: center;
-  width: 40%;
-}
-
-main .container .filter button {
-  background-color: #F5F5F5;
-  border: 1px solid #DCDCDC;
-  border-radius: 4px;
-  color: #555;
-  line-height: 10px;
-  margin: 2px;
-  padding: 10px;
-  text-decoration: none;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-main .container .filter button:hover {
-  background-color: #555;
-  color: #FFF;
-  cursor: pointer;
-}
-
-main .container .showcase {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 5px;
-  -ms-grid-columns: 25% 25% 25% 25%;
-      grid-template-columns: 25% 25% 25% 25%;
-}
-
-main .container .showcase .project {
-  background-color: black;
-  border-radius: 5px;
-  height: 200px;
-  width: 100%;
-}
-
-@media (min-width: 0) and (max-width: 500px) {
-  main .container .showcase {
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-  }
-}
-
-@media (min-width: 500px) and (max-width: 800px) {
-  main .container .showcase {
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1150px) {
-  main .container .showcase {
-    -ms-grid-columns: 33% 33% 33%;
-        grid-template-columns: 33% 33% 33%;
-  }
-}
-
-footer {
-  bottom: 0;
-  font-size: 12px;
-  line-height: 17px;
-  padding: 10px;
-  text-align: center;
-  width: 100%;
 }
 /*# sourceMappingURL=index.css.map */
