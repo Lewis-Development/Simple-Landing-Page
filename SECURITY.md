@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Almost every version of this portfolio will remain secure and activitly supported. However, with that being said, it is vital to keep yourself updated with any and all changes.
+Almost every version of this site will remain secure and activitly supported. However, with that being said, it is vital to keep yourself updated with any and all changes.
 
 ## Reporting a Vulnerability
 
