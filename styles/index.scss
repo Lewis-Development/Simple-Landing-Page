@@ -86,6 +86,10 @@ header {
         } 
 
         @include breakpoint-mobile {
+            a { 
+                margin-top: 15px;
+                padding: 5px 20px; 
+            }
             .cut { display: none; } 
             .upper { text-transform: uppercase; }
         }
