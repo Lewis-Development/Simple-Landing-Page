@@ -7,15 +7,15 @@ $font-color: (
 @function color($color-name) { @return map-get($font-color, $color-name) };
 
 @mixin breakpoint-mobile {
-    @media (min-width: 0) and (max-width: 800px) { @content; }
+    @media (min-width: 0) and (max-width: 795px) { @content; }
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #222234; }
-::-webkit-scrollbar-thumb { background: #161624; }
-::-webkit-scrollbar-thumb:hover { background: #22222C; }
+::-webkit-scrollbar-track { background: #222; }
+::-webkit-scrollbar-thumb { background: #333; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
 
 * { box-sizing: border-box; }
 
