@@ -87,6 +87,7 @@ header {
 
         @include breakpoint-mobile {
             a { 
+                border: 1px solid #FFF;
                 margin-top: 15px;
                 padding: 5px 20px; 
             }
